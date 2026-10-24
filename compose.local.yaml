@@ -1,0 +1,7 @@
+services:
+  recommendation:
+    image: astronomy-recommendation:dev
+    pull_policy: never
+    depends_on:
+      product-catalog:
+        condition: service_healthy

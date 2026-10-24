@@ -1,0 +1,17 @@
+services:
+  product-catalog:
+    healthcheck:
+      test:
+        - CMD
+        - /bin/grpc_health_probe
+        - -addr=127.0.0.1:3550
+        - -connect-timeout=3s
+        - -rpc-timeout=3s
+      timeout: 10s
+
+  opensearch:
+    healthcheck:
+      start_period: 180s
+      interval: 10s
+      timeout: 10s
+      retries: 12
