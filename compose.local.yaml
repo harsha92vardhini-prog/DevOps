@@ -5,3 +5,20 @@ services:
     depends_on:
       product-catalog:
         condition: service_healthy
+
+  payment:
+    mem_limit: 256m
+    memswap_limit: 512m
+    deploy:
+      resources:
+        limits:
+          memory: 256m
+
+  product-catalog:
+    mem_limit: 256m
+    memswap_limit: 512m
+    deploy:
+      resources:
+        limits:
+          memory: 256m
+
